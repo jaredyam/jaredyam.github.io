@@ -1,0 +1,17 @@
+pygmentsCodeFences = true
+PygmentsStyle = "fruity"
+
+baseURL = "https://jaredyam.github.io"
+languageCode = "en-us"
+title = "Jared Yam's Blog"
+theme = "hugonews"
+publishDir = "docs"
+
+[params.utteranc]
+repo = '4ever9/blog-comments'
+
+[taxonomies]
+tag = "tags"
+
+[markup.goldmark.renderer]
+unsafe= true

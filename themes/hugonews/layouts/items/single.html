@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">  -->
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    <title>{{ .Site.Title }}</title>
+</head>
+
+<body>
+    <main id="main">
+        <article class="single">
+            {{ if ne (trim .Content " ") "" }}
+            {{ .Content }}
+            {{ else }}
+            <p>You have not written any notes for this article.</p>
+            {{ end }}
+        </article>
+        {{ partial "footer.html" . }}
