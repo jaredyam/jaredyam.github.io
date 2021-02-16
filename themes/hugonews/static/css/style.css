@@ -174,12 +174,12 @@ ul.pagination li.active a {
 
 .single p {
     line-height: 1.2;
+    margin: 1rem auto;
 }
 
 
 .single code {
     color: #ff0;
-    padding: 0 0.5rem;
     font-family: monospace;
     font-size: 10pt;
 }
