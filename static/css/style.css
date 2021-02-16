@@ -184,6 +184,10 @@ ul.pagination li.active a {
     font-size: 10pt;
 }
 
+.single li {
+    margin: .5rem auto;
+}
+
 @media (max-width: 960px) {
 
     #header,
