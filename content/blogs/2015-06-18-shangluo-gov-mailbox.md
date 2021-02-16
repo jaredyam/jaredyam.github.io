@@ -1,7 +1,7 @@
 ---
 title: "商洛市民就商洛市更名为商州市的提议"
 date: 2021-02-15T18:16:25+08:00
-itemurl: "https://jaredyam.github.io/items/2015-06-18-shangluo-gov-mailbox"
+itemurl: "https://jaredyam.github.io/blogs/2015-06-18-shangluo-gov-mailbox"
 sites: "jaredyam.github.io"
 tags: ["shangluo.gov.cn"]
 draft: false
