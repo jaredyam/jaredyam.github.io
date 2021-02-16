@@ -4,7 +4,6 @@ PygmentsStyle = "fruity"
 baseURL = "https://jaredyam.github.io"
 languageCode = "en-us"
 title = "Jared Yam's Blog"
-theme = "hugonews"
 publishDir = "docs"
 
 [params.utteranc]

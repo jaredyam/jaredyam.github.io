@@ -2,8 +2,6 @@
 content/blogs/
 
 # regular structure
-archetypes/
 data/
-layouts/
-static/
 resources/
+themes/
