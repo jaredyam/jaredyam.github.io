@@ -24,7 +24,7 @@ body {
 
 p {
     margin: 0;
-    line-height: 1;
+    line-height: 1rem;
 }
 
 a {
@@ -173,7 +173,7 @@ ul.pagination li.active a {
 
 
 .single p {
-    line-height: 1.2;
+    line-height: 1.2rem;
     margin: 1rem auto;
 }
 
