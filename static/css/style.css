@@ -8,7 +8,8 @@
 body {
     align-items: center;
     display: flex;
-    font: .8rem/1rem Verdana, Geneva, Tahoma, sans-serif;
+    font-family: sans-serif;
+    /*    .8rem/1rem Verdana, Geneva, Tahoma,*/
     flex-direction: column;
     justify-content: center;
     font-size: 11pt;
@@ -35,7 +36,8 @@ a {
 #footer {
     color: #5d9;
     background: #000;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: sans-serif;
+    /*    Verdana, Geneva, Tahoma,*/
     /* Roboto Mono', Verdana, Geneva, Tahoma, sans-serif; */
     padding: 0.4rem 0.8rem;
     width: 960px;
@@ -86,7 +88,7 @@ nav a {
 }
 
 .item__urls {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: sans-serif;
     /* 'Roboto Mono', Verdana, Geneva, Tahoma, sans-serif; */
 }
 
