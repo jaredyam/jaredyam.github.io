@@ -1,30 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://jaredyam.github.io/blogs/</loc>
-    <lastmod>2021-02-15T18:16:25+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-03-04T19:47:50+08:00</lastmod>
+  </url><url>
     <loc>https://jaredyam.github.io/</loc>
-    <lastmod>2021-02-15T18:16:25+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-03-04T19:47:50+08:00</lastmod>
+  </url><url>
+    <loc>https://jaredyam.github.io/blogs/xian-gov-mailbox-2019101003004038/</loc>
+    <lastmod>2021-03-04T19:47:50+08:00</lastmod>
+  </url><url>
     <loc>https://jaredyam.github.io/tags/shangluo.gov.cn/</loc>
     <lastmod>2021-02-15T18:16:25+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jaredyam.github.io/tags/</loc>
     <lastmod>2021-02-15T18:16:25+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jaredyam.github.io/blogs/2015-06-18-shangluo-gov-mailbox/</loc>
     <lastmod>2021-02-15T18:16:25+08:00</lastmod>
   </url>
-  
 </urlset>
