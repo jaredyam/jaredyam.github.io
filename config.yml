@@ -41,5 +41,5 @@ params:
   comments: true
   commentsParams:
     repo: "jaredyam/jaredyam.github.io"
-    issue-term: title
+    issueTerm: title
     label: Comment
