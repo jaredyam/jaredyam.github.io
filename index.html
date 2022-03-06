@@ -50,7 +50,19 @@
 <span>🔍 Search</span>
 </a>
 </li></ul></nav></header><main class=main>
-</main><footer class=footer>
+<article class=first-entry>
+<header class=entry-header>
+<h2>使用 Hugo 和 GitHub Pages 搭建并部署一个静态博客网站
+</h2></header><section class=entry-content>
+<p>最近打算将我在 CSDN 上发布并持续优化的部分内容同步至 GitHub，这些内容十分需要借助 Git 记录和追溯修改历史，而 GitHub 也可以作为这些内容的另一个获取平台。
+将文档直接丢进 GitHub 仓库好像又差点意思。GitHub Pages 为每个 GitHub 账户免费提供一项静态网站托管服务，通过域名 https://&lt;your-github-id>.github.io 即可访问同名仓库托管的静态网站。借助这项服务，我们可以依托 GitHub 仓库搭建一个静态博客网站，将文档以博客形式开放展阅。
+本文将介绍如何使用 Hugo 搭建静态博客网站、使用和定制 hugo-PaperMod 主题以及将网站部署在 GitHub Pages。
+搭建静态网站 如今搭建静态网站的方法已经非常成熟，我根据网友讨论和个人喜好选择 Hugo 作为静态网站搭建框架，同样流行的框架还包括 Hexo、Jekyll 等。
+安装 Hugo 框架 Hugo 提供多种操作系统的安装指引。以我的 macOS 系统为例，可以通过包管理器 brew 快速完成安装：
+brew install hugo 创建网站模板 使用 Hugo 可以快速创建一个网站模板：
+brew new site &lt;your-github-id>.github.io -f yml 其中 &lt;your-github-id>.github.io 对应新建网站的项目文件夹（&lt;your-github-id> 需替换为 GitHub ID），选项 -f 将网站配置文件设置为 YAML 格式，其目的是为与下文主题配置保持一致。为方便起见，下文将网站项目文件夹简称为「网站」。
+配置基础主题 在流行框架的基础上搭建网站其实并不是一个技术活，千差万别的网站体验则主要体现在网站主题的设计上。Hugo 提供丰富多样的主题模板，我根据网友讨论选择 adityatelange/hugo-PaperMod 作为基础主题。PaperMod 页面简洁，支持暗黑模式及众多实用特性。...</p></section><footer class=entry-footer><span title="2022-03-06 20:29:59 +0800 +0800">三月 6, 2022</span></footer><a class=entry-link aria-label="post link to 使用 Hugo 和 GitHub Pages 搭建并部署一个静态博客网站" href=https://jaredyam.github.io/posts/build-and-deploy-a-static-blog-website-with-hugo-and-github-pages/></a>
+</article></main><footer class=footer>
 <span>&copy; 2022 <a href=https://jaredyam.github.io>👨‍🌾 Jared Yam</a></span>
 <span>
 Powered by
