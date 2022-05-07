@@ -118,7 +118,7 @@ params:
 
 ### 添加评论区
 
-[utterances](https://utteranc.es/) 是一个基于 GitHub issues 的评论系统，包含多种主题可供选择。你应该首先跟随 [utterances 配置方法](https://utteranc.es/)，了解相关设置并根据个人喜好生成一份包含属性描述的 `HTML` 代码：
+[utterances](https://utteranc.es/) 是一个基于 GitHub issues 的评论系统，包含多种主题可供选择。你应该首先跟随 [utterances 配置方法](https://utteranc.es/)了解可选配置项，并根据个人偏好自动生成一份包含个性化配置属性的 `HTML` 代码：
 ```html
 <script src="https://utteranc.es/client.js"
         repo="jaredyam/jaredyam.github.io"
@@ -173,7 +173,7 @@ params:
     issueTerm: "title"
     label: "Comment"
 ```
-其中 `repo`，`issueTerm`，`label` 的属性值应当与自动生成代码保持一致。
+其中 `repo`，`issueTerm`，`label` 的属性值应当与 utterances 自动生成代码保持一致。
 
 除了在加载网站时使其主题和评论区亮暗模式保持一致外，手动切换网站主题亮暗模式的同时也应该改变评论区主题。在 `./layouts/partials/footer.html:72` 区域加入如下代码块：
 ```diff
