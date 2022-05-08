@@ -72,25 +72,17 @@
 {{- if (not site.Params.disableThemeToggle) }}
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
+        let theme = 'light';
         if (document.body.className.includes("dark")) {
             document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-            const message = {
-                type: 'set-theme',
-                theme: 'github-light'
-            };
-            const iframe = document.querySelector('.utterances-frame');
-            iframe.contentWindow.postMessage(message, 'https://utteranc.es');
         } else {
             document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-            const message = {
-                type: 'set-theme',
-                theme: 'github-dark'
-            };
-            const iframe = document.querySelector('.utterances-frame');
-            iframe.contentWindow.postMessage(message, 'https://utteranc.es');
-        }
+            theme = 'dark';
+            }
+        localStorage.setItem("pref-theme", theme);
+        const message = {'giscus': {'setConfig': {'theme': theme}}};
+        const iframe = document.querySelector('iframe.giscus-frame');
+        iframe.contentWindow.postMessage(message, 'https://giscus.app');
     })
 
 </script>

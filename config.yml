@@ -46,8 +46,14 @@ params:
   comments: true
   commentsParams:
     repo: jaredyam/jaredyam.github.io
-    issueTerm: title
-    label: Comment
+    repoId: R_kgDOG9Gq_Q
+    category: Announcements
+    categoryId: DIC_kwDOG9Gq_c4CO_p0
+    mapping: title
+    reactionsEnabled: 1
+    emitMetadata: 1
+    inputPosition: top
+    lang: zh-CN
   DateFormat: 2006 年January 2 日
   autonumbering: true
 
