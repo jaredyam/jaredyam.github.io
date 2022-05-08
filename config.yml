@@ -31,6 +31,8 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+  highlight:
+    noClasses: false
 
 params:
   defaultTheme: light
