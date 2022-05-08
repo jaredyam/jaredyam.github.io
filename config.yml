@@ -47,6 +47,7 @@ params:
     issueTerm: title
     label: Comment
   DateFormat: 2006 年January 2 日
+  autonumbering: true
 
 frontmatter:
   lastmod:
