@@ -359,7 +359,7 @@ a:hover {
 }
 
 .toc ul {
-    list-style-type: "\1F53B  ";
+    list-style-type: none;
 }
 
 .toc .inner {
