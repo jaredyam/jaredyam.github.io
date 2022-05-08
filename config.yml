@@ -4,6 +4,8 @@ defaultContentLanguage: zh
 title: 👨‍🌾 Jared Yam
 theme: PaperMod
 enableGitInfo: true
+hasCJKLanguage: true
+summaryLength: 90
 
 menu:
   main:
