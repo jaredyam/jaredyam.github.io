@@ -138,9 +138,9 @@ params:
         let theme = localStorage.getItem('pref-theme') === 'dark' ? 'github-dark' : 'github-light';
         let s = document.createElement('script');
         s.src = 'https://utteranc.es/client.js';
-        s.setAttribute('repo', '{{- .Site.Params.commentsParams.repo -}}');
-        s.setAttribute('issue-term', '{{- .Site.Params.commentsParams.issueTerm -}}');
-        s.setAttribute('label', '{{- .Site.Params.commentsParams.label -}}');
+        s.setAttribute('repo', '{{- site.Params.commentsParams.repo -}}');
+        s.setAttribute('issue-term', '{{- site.Params.commentsParams.issueTerm -}}');
+        s.setAttribute('label', '{{- site.Params.commentsParams.label -}}');
         s.setAttribute('theme', theme);
         s.setAttribute('crossorigin', 'anonymous');
         s.setAttribute('async', '');
@@ -177,7 +177,7 @@ params:
 
 除了在加载网站时使其主题和评论区亮暗模式保持一致外，手动切换网站主题亮暗模式的同时也应该改变评论区主题。在 `./layouts/partials/footer.html:72` 区域加入如下代码块：
 ```diff
-{{- if (not .Site.Params.disableThemeToggle) }}
+{{- if (not site.Params.disableThemeToggle) }}
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
         if (document.body.className.includes("dark")) {
