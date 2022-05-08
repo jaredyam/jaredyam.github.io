@@ -1,7 +1,7 @@
 ---
 title: "使用 Hugo 和 GitHub Pages 搭建并部署一个静态博客网站"
 date: 2022-03-06T20:29:59+08:00
-Description: 🔎 https://<your-github-id>.github.io ↩️
+Description: "🔎 https://<your-github-id>.github.io ↩️"
 tags: ["Hugo", "GitHub Pages"]
 draft: false
 ---
@@ -46,12 +46,12 @@ git submodule--helper add https://github.com/adityatelange/hugo-PaperMod.git the
 <!-- TODO: 子模板更新 -->
 随后，我们只需将主题名称写入配置文件 `./config.yml`：
 ```yaml
-baseURL: "https://jaredyam.github.io"
-languageCode: "en-us"
+baseURL: https://jaredyam.github.io
+languageCode: en-us
 defaultContentLanguage: zh
 title: 👨‍🌾 Jared Yam
 # 主题
-theme: "PaperMod"
+theme: PaperMod
 ```
 便搭建完成了一个完整的静态博客网站。
 
@@ -101,12 +101,12 @@ git submodule sync
 ```
 基础主题默认不显示目录栏，我们需要在主题配置文件 `./config.yml` 中启用并展开目录：
 ```yaml
-baseURL: "https://jaredyam.github.io"
-languageCode: "en-us"
+baseURL: https://jaredyam.github.io
+languageCode: en-us
 defaultContentLanguage: zh
 title: 👨‍🌾 Jared Yam
 # 主题
-theme: "PaperMod"
+theme: PaperMod
 
 params:
   # 目录
@@ -155,12 +155,12 @@ params:
 
 不难看出，我们还需要在主题配置文件 `./config.yml` 中添加评论区参数：
 ```yaml
-baseURL: "https://jaredyam.github.io"
-languageCode: "en-us"
+baseURL: https://jaredyam.github.io
+languageCode: en-us
 defaultContentLanguage: zh
 title: 👨‍🌾 Jared Yam
 # 主题
-theme: "PaperMod"
+theme: PaperMod
 
 params:
   # 目录
@@ -169,9 +169,9 @@ params:
   # 评论区
   comments: true
   commentsParams:
-    repo: "jaredyam/jaredyam.github.io"
-    issueTerm: "title"
-    label: "Comment"
+    repo: jaredyam/jaredyam.github.io
+    issueTerm: title
+    label: Comment
 ```
 其中 `repo`，`issueTerm`，`label` 的属性值应当与 utterances 自动生成代码保持一致。
 

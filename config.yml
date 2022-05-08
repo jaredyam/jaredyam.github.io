@@ -1,7 +1,7 @@
-baseURL: "https://jaredyam.github.io"
-languageCode: "en-us"
+baseURL: https://jaredyam.github.io
+languageCode: en-us
 defaultContentLanguage: zh
-title: "👨‍🌾 Jared Yam"
+title: 👨‍🌾 Jared Yam
 theme: PaperMod
 enableGitInfo: true
 
@@ -9,15 +9,15 @@ menu:
   main:
     - identifier: Archive
       name: 📚 Archive
-      url: "/archives/"
+      url: /archives/
       weight: 10
     - identifier: Tags
       name: 🏷 Tags
-      url: "/tags/"
+      url: /tags/
       weight: 20
     - identifier: Search
       name: 🔍 Search
-      url: "/search/"
+      url: /search/
       weight: 30
 
 # Search page
@@ -43,7 +43,7 @@ params:
   ShowPostNavLinks: true
   comments: true
   commentsParams:
-    repo: "jaredyam/jaredyam.github.io"
+    repo: jaredyam/jaredyam.github.io
     issueTerm: title
     label: Comment
   DateFormat: 2006 年January 2 日
