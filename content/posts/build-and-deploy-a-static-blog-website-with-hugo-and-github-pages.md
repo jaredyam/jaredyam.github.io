@@ -116,32 +116,44 @@ params:
 
 值得注意的是，远程 PR 分支可能并不涵盖主分支的最新特性。你可以通过创建一个 fork 仓库同时追踪主分支和 PR 分支的更新。
 
-### 添加评论区
+### 添加评论系统
 
-[utterances](https://utteranc.es/) 是一个基于 GitHub issues 的评论系统，包含多种主题可供选择。你应该首先跟随 [utterances 配置方法](https://utteranc.es/)了解可选配置项，并根据个人偏好自动生成一份包含个性化配置属性的 `HTML` 代码：
+[giscus](https://giscus.app/zh-CN) 是一个基于 GitHub Discussions 的评论系统，包含多种主题可供选择。你应该首先跟随 [utterances 配置方法](https://giscus.app/zh-CN)了解可选配置项，并根据个人偏好自动生成一份包含个性化配置属性的 `HTML` 代码：
 ```html
-<script src="https://utteranc.es/client.js"
-        repo="jaredyam/jaredyam.github.io"
-        issue-term="title"
-        label="Comment"
-        theme="github-light"
+<script src="https://giscus.app/client.js"
+        data-repo="jaredyam/jaredyam.github.io"
+        data-repo-id="R_kgDOG9Gq_Q"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOG9Gq_c4CO_p0"
+        data-mapping="title"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
 ```
 
-官方提供的自动生成代码仅支持设置一个固定主题，而我们希望网站主题和评论区主题亮暗模式可以保持同步。参照 [Issue #427 · utterance/utterances](https://github.com/utterance/utterances/issues/427) 的讨论，上述代码可以修改为：
+官方提供的自动生成代码仅支持设置一个固定主题，而我们希望网站主题和评论系统主题的亮暗模式可以保持一致。参照 [utterances 讨论系统主题切换](https://github.com/utterance/utterances/issues/427)的相关讨论，上述代码可以简单替换为：
 ```html
 <div class="comments">
     <script>
     function loadComment() {
-        let theme = localStorage.getItem('pref-theme') === 'dark' ? 'github-dark' : 'github-light';
+        let theme = localStorage.getItem('pref-theme') === 'dark' ? 'dark' : 'light';
         let s = document.createElement('script');
-        s.src = 'https://utteranc.es/client.js';
-        s.setAttribute('repo', '{{- site.Params.commentsParams.repo -}}');
-        s.setAttribute('issue-term', '{{- site.Params.commentsParams.issueTerm -}}');
-        s.setAttribute('label', '{{- site.Params.commentsParams.label -}}');
-        s.setAttribute('theme', theme);
+        s.src = 'https://giscus.app/client.js';
+        s.setAttribute('data-repo', '{{- site.Params.commentsParams.repo -}}');
+        s.setAttribute('data-repo-id', '{{- site.Params.commentsParams.repoId -}}');
+        s.setAttribute('data-category', '{{- site.Params.commentsParams.category -}}');
+        s.setAttribute('data-category-id', '{{- site.Params.commentsParams.categoryId -}}');
+        s.setAttribute('data-mapping', '{{- site.Params.commentsParams.mapping -}}');
+        s.setAttribute('data-reactions-enabled', '{{- site.Params.commentsParams.reactionsEnabled -}}');
+        s.setAttribute('data-emit-metadata', '{{- site.Params.commentsParams.emitMetadata -}}');
+        s.setAttribute('data-input-position', '{{- site.Params.commentsParams.inputPosition -}}');
+        s.setAttribute('data-lang', '{{- site.Params.commentsParams.lang -}}');
+        s.setAttribute('data-theme', theme);
         s.setAttribute('crossorigin', 'anonymous');
         s.setAttribute('async', '');
         document.querySelector('div.comments').innerHTML = '';
@@ -151,9 +163,9 @@ params:
     </script>
 </div>
 ```
-将修改后的代码写入 `./layouts/partials/comments.html` 即可。
+从而根据当前网站主题设置讨论系统主题。将修改后的代码写入 `./layouts/partials/comments.html` 即可在博客页面插入讨论系统。
 
-不难看出，我们还需要在主题配置文件 `./config.yml` 中添加评论区参数：
+不难看出，我们还需要在主题配置文件 `./config.yml` 中设置一些评论系统参数才能使讨论系统正常加载：
 ```yaml
 baseURL: https://jaredyam.github.io
 languageCode: en-us
@@ -166,42 +178,44 @@ params:
   # 目录
   ShowToc: true
   TocOpen: true
-  # 评论区
+  # 评论系统
   comments: true
   commentsParams:
     repo: jaredyam/jaredyam.github.io
-    issueTerm: title
-    label: Comment
+    repoId: R_kgDOG9Gq_Q
+    category: Announcements
+    categoryId: DIC_kwDOG9Gq_c4CO_p0
+    mapping: title
+    reactionsEnabled: 1
+    emitMetadata: 1
+    inputPosition: top
+    lang: zh-CN
 ```
-其中 `repo`，`issueTerm`，`label` 的属性值应当与 utterances 自动生成代码保持一致。
+其中 `commentsParams` 的子属性值应当与 giscus 自动生成的代码内容保持一致。
 
-除了在加载网站时使其主题和评论区亮暗模式保持一致外，手动切换网站主题亮暗模式的同时也应该改变评论区主题。在 `./layouts/partials/footer.html:72` 区域加入如下代码块：
+在手动切换网站主题亮暗模式时，评论系统主题应该随网站主题发生变化。在 `./layouts/partials/footer.html:72` 区域加入如下代码块：
 ```diff
-{{- if (not site.Params.disableThemeToggle) }}
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-+           const message = {
-+               type: 'set-theme',
-+               theme: 'github-light'
-+           };
-+           const iframe = document.querySelector('.utterances-frame');
-+           iframe.contentWindow.postMessage(message, 'https://utteranc.es');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-+           const message = {
-+               type: 'set-theme',
-+               theme: 'github-dark'
-+           };
-+           const iframe = document.querySelector('.utterances-frame');
-+           iframe.contentWindow.postMessage(message, 'https://utteranc.es');
-        }
-    })
-</script>
-{{- end }}
+ {{- if (not site.Params.disableThemeToggle) }}
+ <script>
+     document.getElementById("theme-toggle").addEventListener("click", () => {
++        let theme = 'light';
+         if (document.body.className.includes("dark")) {
+             document.body.classList.remove('dark');
+-            localStorage.setItem("pref-theme", 'light');
+         } else {
+             document.body.classList.add('dark');
+-            localStorage.setItem("pref-theme", 'dark');
+-        }
++            theme = 'dark';
++            }
++        localStorage.setItem("pref-theme", theme);
++        const message = {'giscus': {'setConfig': {'theme': theme}}};
++        const iframe = document.querySelector('iframe.giscus-frame');
++        iframe.contentWindow.postMessage(message, 'https://giscus.app');
+     })
+
+ </script>
+ {{- end }}
 ```
 即可实现这一目的。
 
