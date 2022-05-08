@@ -3,6 +3,7 @@ languageCode: "en-us"
 defaultContentLanguage: zh
 title: "👨‍🌾 Jared Yam"
 theme: PaperMod
+enableGitInfo: true
 
 menu:
   main:
@@ -45,3 +46,10 @@ params:
     repo: "jaredyam/jaredyam.github.io"
     issueTerm: title
     label: Comment
+  DateFormat: 2006 年January 2 日
+
+frontmatter:
+  lastmod:
+  - :git
+  - lastmod
+  - date
