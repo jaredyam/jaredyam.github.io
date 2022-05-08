@@ -81,7 +81,7 @@ hugo new posts/quickstart.md
 
 ### 转移目录至侧边栏
 
-[Pull Request #675 · adityatelange/hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod/pull/675) 提出将文章目录转移至侧边栏，可以轻松实现上下文跳转。由于这一特性还未并入主分支，我们可以让子模块追踪其远程 PR 分支：
+[Pull Request #675 · adityatelange/hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod/pull/675) 提出将文章目录转移至侧边栏，可以轻松实现上下文跳转。截至发文这一特性还未并入主分支，我们可以让主题子模块追踪该远程 PR 分支：
 ```bash
 cd themes/PaperMod
 git fetch origin pull/675/head:toc-on-the-side --depth=1
@@ -91,8 +91,8 @@ cd ../..
 除了切换到 PR 分支，我们还需要让子模块配置文件 `./gitmodules` 指向 PR 分支：
 ```ini
 [submodule "themes/PaperMod"]
-	path = themes/PaperMod
-	url = https://github.com/nielsbrakel/hugo-PaperMod.git
+    path = "themes/PaperMod"
+    url = "https://github.com/nielsbrakel/hugo-PaperMod.git"
     branch = "toc-on-the-side"
 ```
 然后再同步子模块 URL 到 `.git/config`：
