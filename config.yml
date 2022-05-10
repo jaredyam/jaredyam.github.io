@@ -53,7 +53,7 @@ params:
     reactionsEnabled: 1
     emitMetadata: 1
     inputPosition: top
-    lang: zh-CN
+    lang: en
   DateFormat: 2006 年 1 月 2 日
   autonumbering: true
 
