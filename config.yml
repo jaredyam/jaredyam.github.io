@@ -54,7 +54,7 @@ params:
     emitMetadata: 1
     inputPosition: top
     lang: zh-CN
-  DateFormat: 2006 年January 2 日
+  DateFormat: 2006 年 1 月 2 日
   autonumbering: true
 
 frontmatter:
