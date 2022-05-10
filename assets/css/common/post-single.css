@@ -75,7 +75,7 @@
 }
 
 a:hover {
-    color: rgb(10, 186, 181);
+    color: var(--a-focus-fg);
 }
 
 /* https://gist.github.com/unruthless/413930 */
@@ -355,6 +355,7 @@ a:hover {
 }
 
 .toc .active {
+    color: var(--a-focus-fg);
     font-weight: 600;
 }
 

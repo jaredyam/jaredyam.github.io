@@ -20,6 +20,7 @@
     --border: rgb(238, 238, 238);
     --bold-fg: rgb(237, 108, 89);
     --code-fg: rgb(239, 154, 95);
+    --a-focus-fg: rgb(10, 186, 181);
 }
 
 .dark {
